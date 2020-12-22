@@ -44,5 +44,12 @@ echo "</table>";
 
 ?>
 
+    <form action="confirmOrder.php">
+        <button>Confirm Order</button>
+
+
+
+    </form>
+
 </body>
 </html>

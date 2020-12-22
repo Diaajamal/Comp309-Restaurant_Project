@@ -10,6 +10,41 @@ class LineItem
     private $quantity;
     private $email;
     private $dishName;
+    private $status;
+    private $orderId;
+
+
+    /**
+     * @return mixed
+     */
+    public function getOrderId()
+    {
+        return $this->orderId;
+    }
+
+    /**
+     * @param mixed $orderId
+     */
+    public function setOrderId($orderId): void
+    {
+        $this->orderId = $orderId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status): void
+    {
+        $this->status = $status;
+    }
 
     /**
      * @return mixed

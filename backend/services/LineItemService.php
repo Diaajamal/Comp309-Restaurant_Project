@@ -13,5 +13,12 @@ class LineItemService
 
     }
 
+    public function confirmOrder($email){
+        $lineItemDao = new LineItemDao();
+        return $lineItemDao->confirmOrder($email);
+
+
+    }
+
 
 }

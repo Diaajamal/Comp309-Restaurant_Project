@@ -15,5 +15,11 @@ class LineItemController
 
 
     }
+    public function confirmOrder($email){
+        $lineItemService = new LineItemService();
+        return $lineItemService->confirmOrder($email);
+
+
+    }
 
 }

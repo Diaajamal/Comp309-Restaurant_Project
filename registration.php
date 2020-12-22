@@ -21,4 +21,6 @@ require_once 'backend/models/User.php';
     $user_controller->create($user_add);
         echo "Account have been created !";
 
+        header("Location: index.php");
+
 ?>

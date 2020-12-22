@@ -26,5 +26,7 @@ require_once 'backend/models/Dish.php';
 
     echo '<br>';
     echo 'created';
+    header("Location: addLineItem.php");
 
- ?>
+
+?>
