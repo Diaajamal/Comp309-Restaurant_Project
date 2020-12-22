@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2020 at 06:08 PM
+-- Generation Time: Dec 22, 2020 at 07:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -33,15 +33,18 @@ CREATE TABLE `lineitem` (
   `quantity` int(50) NOT NULL,
   `dish_id` varchar(30) NOT NULL,
   `Email` varchar(30) NOT NULL,
-  `dish_name` varchar(100) NOT NULL
+  `dish_name` varchar(100) NOT NULL,
+  `Status` enum('PENDING','CONFIRMED','DELIVERED','') DEFAULT NULL,
+  `order_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `lineitem`
 --
 
-INSERT INTO `lineitem` (`id`, `price`, `quantity`, `dish_id`, `Email`, `dish_name`) VALUES
-(0, 144, 12, '5fe1048e47', 'karafat1998@gmail.com', 'Chicken fila');
+INSERT INTO `lineitem` (`id`, `price`, `quantity`, `dish_id`, `Email`, `dish_name`, `Status`, `order_id`) VALUES
+(0, 180, 15, '5fe1048e47', 'nour@gmail.com', 'Chicken fila', 'CONFIRMED', '5fe235f77d31e'),
+(0, 210, 14, '5fe1f53a6f', 'nour@gmail.com', 'Meat with things', 'CONFIRMED', '5fe235f77d31e');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
