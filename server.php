@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "rms";
+    $dbname = "restaurantpro";
     
     // Create connection
     $connection = mysqli_connect($servername, $username, $password, $dbname);
