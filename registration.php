@@ -9,6 +9,7 @@ require_once 'backend/models/User.php';
     $eml = $_POST['eml'];
     $psw = $_POST['pass'];
     $pn = $_POST['phone'];
+    $pn
 
     $user_add = new User();
     $user_add->setFirstName($fn);
