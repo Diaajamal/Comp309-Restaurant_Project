@@ -5,7 +5,7 @@ require_once 'backend/models/User.php';
 session_start();
 if(isset($_COOKIE['cookie_name']))
 {
-    header('Location: HomePage.html');
+    header('Location: AdminHomePage.html');
 }
     $eml=$_POST['eml'];
     $psw=$_POST['pass'];
@@ -19,10 +19,16 @@ if(isset($_COOKIE['cookie_name']))
                     echo $cookie_name.$cookie_value;
                     setcookie('cookie_name', $cookie_name, time() + (86400 * 30)); // 86400 = 1 day
                 }
+                if($eml == 'admin@admin.com'){
+                    header('Location: AdminHomePage.html');
+                    break;
+                }
+                else{
+                    header('Location: HomePage.html');
+                    break;
+                }
 
 
-                header('Location: HomePage.html');
-                break;
             }
             else continue;
         }
