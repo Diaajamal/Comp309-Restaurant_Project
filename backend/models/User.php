@@ -9,6 +9,23 @@ class User
     private $email;
     private $password;
     private $phone_number;
+    private $type;
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type): void
+    {
+        $this->type = $type;
+    }
 
     /**
      * @return mixed

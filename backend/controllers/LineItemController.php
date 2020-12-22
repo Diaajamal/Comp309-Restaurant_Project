@@ -9,5 +9,11 @@ class LineItemController
         $lineItemService = new LineItemService();
         $lineItemService->create($lineItem);
     }
+    public function getByEmail($email){
+        $lineItemService = new LineItemService();
+       return $lineItemService->getByEmail($email);
+
+
+    }
 
 }

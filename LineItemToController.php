@@ -10,6 +10,7 @@ require_once 'backend/models/Dish.php';
     $quantity=$_POST['quantity'];
     $name=$_POST['dish'];
 
+
     $dishController =new DishController();
 
     $dishFind=new Dish();
@@ -17,10 +18,10 @@ require_once 'backend/models/Dish.php';
     $row1=mysqli_fetch_array($result1);
     $lineItem=new LineItem();
     $lineItem->setQuantity($quantity);
-    echo $row1[2];
     $lineItem->setPrice($quantity * $row1[2]);
     $lineItem->setDishId($row1[0]);
-
+    $lineItem->setDishName($row1[1]);
+    $lineItem->setEmail(array_values($_COOKIE)[0]);
     $lineItem_controller->create($lineItem);
 
     echo '<br>';
