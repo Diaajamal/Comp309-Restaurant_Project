@@ -5,7 +5,7 @@ require_once 'backend/models/User.php';
 session_start();
 if(isset($_COOKIE['cookie_name']))
 {
-    header('Location: HomePage.html');
+    header('Location: AdminHomePage.html');
 }
 $eml=$_POST['eml'];
 $psw=$_POST['pass'];
@@ -27,6 +27,7 @@ function checkUser($list, $eml, $psw){
             if($user->getType()==1){
                 header('Location: AdminHomePage.php');
                 break;
+
             }
         }
         else                 header('Location: UnauthorizedCombination.html');
