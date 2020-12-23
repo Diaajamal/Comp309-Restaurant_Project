@@ -53,21 +53,7 @@ class OrderDao
         $connection->close();
     }
 
-    public function update($order)
-    {
-        include 'server.php';
-        $order_id=$order->getId();
-        $order_price = $order->getPrice();
-        $order_status = $order->getStatus();
 
-
-        $query = "UPDATE users SET price= '$order_price',  status = '$order_status'WHERE id =  $order_id";
-        $result = $connection->query($query);
-
-        if (!$result) die($connection->error);
-
-        $connection->close();
-    }
 
     public function delete($e_n)
     {

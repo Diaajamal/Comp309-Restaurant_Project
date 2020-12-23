@@ -37,9 +37,26 @@ class LineItemDao
     public function confirmOrder($email){
         include 'server.php';
         $id=uniqid();
-        $query = "UPDATE lineitem set Status='CONFIRMED',order_id='$id' where status='PENDING' and email='$email'  ";
-        $result = mysqli_query($connection,$query);
-        return  $result;
+        $date = date("m/d/Y h:i:s a", time());
+
+        $query="insert into myorder(id) values('$id')";
+        $result = $connection->query($query);
+
+       $query1= "UPDATE lineitem set Status='CONFIRMED',order_id='$id' where status='PENDING' and email='$email'";
+
+        $query= "Update myorder o set email= '$email'";
+        $result = $connection->query($query);
+        $result1 = mysqli_query($connection,$query1);
+
+        $query=" Update myorder o set price= (select sum(price) from lineitem l where l.order_id='$id') where o.id='$id'";
+        $result = $connection->query($query);
+
+        $query=" Update myorder o set DateCreated='$date' where id='$id'";
+
+        $result = $connection->query($query);
+
+
+        return  $result1;
 
 
 

@@ -37,6 +37,7 @@ while($row1=mysqli_fetch_array($result)){
 
 echo "  </tbody>";
     echo '<br>';
+
     $index=$index+1;
 }
 echo "</table>";
@@ -50,6 +51,7 @@ echo "</table>";
 
 
     </form>
+
 
 </body>
 </html>
