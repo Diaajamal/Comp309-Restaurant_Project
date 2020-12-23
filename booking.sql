@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2020 at 05:24 PM
+-- Generation Time: Dec 22, 2020 at 10:35 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,25 +18,46 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rms`
+-- Database: `restaurantpro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lineitem`
+-- Table structure for table `booking`
 --
 
-CREATE TABLE `lineitem` (
-  `id` int(10) NOT NULL,
-  `price` int(10) NOT NULL,
-  `quantity` int(50) NOT NULL,
-  `dish_id` varchar(30) NOT NULL,
-  `Email` varchar(30) NOT NULL,
-  `dish_name` varchar(100) NOT NULL,
-  `Status` enum('PENDING','CONFIRMED','DELIVERED','') DEFAULT NULL,
-  `order_id` varchar(100) NOT NULL
+CREATE TABLE `booking` (
+  `c_name` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `guest` varchar(220) NOT NULL,
+  `msg` varchar(100) NOT NULL,
+  `e_name` varchar(255) NOT NULL,
+  `phone` varchar(11) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

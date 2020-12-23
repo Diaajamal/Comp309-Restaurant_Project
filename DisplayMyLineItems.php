@@ -45,21 +45,12 @@ while($row1=mysqli_fetch_array($result)){
 
 echo "  </tbody>";
     echo '<br>';
-
     $index=$index+1;
 }
 echo "</table>";
 
 
 ?>
-
-    <form action="confirmOrder.php">
-        <button>Confirm Order</button>
-
-
-
-    </form>
-
 
 </body>
 </html>

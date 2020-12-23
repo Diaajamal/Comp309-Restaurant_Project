@@ -14,5 +14,4 @@ require_once 'backend/models/Dish.php';
     $dishAdd-> setId(uniqid());
 
     $dishController->create($dishAdd);
-    echo "Account have been created !";
-print_r($_COOKIE)?>
+    header("Location:AddDishForm.php");

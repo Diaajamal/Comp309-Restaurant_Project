@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2020 at 05:24 PM
+-- Generation Time: Dec 23, 2020 at 05:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -24,19 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lineitem`
+-- Table structure for table `myorder`
 --
 
-CREATE TABLE `lineitem` (
-  `id` int(10) NOT NULL,
-  `price` int(10) NOT NULL,
-  `quantity` int(50) NOT NULL,
-  `dish_id` varchar(30) NOT NULL,
-  `Email` varchar(30) NOT NULL,
-  `dish_name` varchar(100) NOT NULL,
-  `Status` enum('PENDING','CONFIRMED','DELIVERED','') DEFAULT NULL,
-  `order_id` varchar(100) NOT NULL
+CREATE TABLE `myorder` (
+  `id` varchar(100) NOT NULL,
+  `price` int(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `DateCreated` varchar(100) NOT NULL,
+  `Status` enum('Confirmed','onWay','Delivered','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `myorder`
+--
+ALTER TABLE `myorder`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
