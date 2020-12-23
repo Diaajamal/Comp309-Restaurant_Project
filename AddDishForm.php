@@ -1,3 +1,12 @@
+<?php
+
+include 'backend/controllers/DishController.php';
+
+if(is_null(array_values($_COOKIE)[0])){
+    header("Location: regform.html");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

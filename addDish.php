@@ -15,5 +15,4 @@ require_once 'backend/models/Dish.php';
 
     $dishController->create($dishAdd);
     echo "Account have been created !";
-
-?>
+print_r($_COOKIE)?>

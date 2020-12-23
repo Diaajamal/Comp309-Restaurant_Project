@@ -25,7 +25,7 @@ function checkUser($list, $eml, $psw){
             header('Location: HomePage.html');
             break;}
             if($user->getType()==1){
-                header('Location: AdminHomePage.html');
+                header('Location: AdminHomePage.php');
                 break;
             }
         }

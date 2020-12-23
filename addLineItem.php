@@ -2,7 +2,10 @@
 
 include 'backend/controllers/DishController.php';
 
+if(is_null(array_values($_COOKIE)[0])){
+header("Location: regform.html");
 
+}
 $dishController = new DishController();
 
 $result1=$dishController->getAll();
