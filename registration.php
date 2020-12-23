@@ -9,7 +9,7 @@ require_once 'backend/models/User.php';
     $eml = $_POST['eml'];
     $psw = $_POST['pass'];
     $pn = $_POST['phone'];
-    $pn
+
 
     $user_add = new User();
     $user_add->setFirstName($fn);
@@ -20,5 +20,7 @@ require_once 'backend/models/User.php';
 
     $user_controller->create($user_add);
         echo "Account have been created !";
+
+        header("Location: index.php");
 
 ?>

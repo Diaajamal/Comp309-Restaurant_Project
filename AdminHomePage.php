@@ -1,3 +1,12 @@
+<?php
+
+include 'backend/controllers/DishController.php';
+
+if(is_null(array_values($_COOKIE)[0])){
+    header("Location: regform.html");
+
+}
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -40,7 +49,7 @@
 			<div class="header-wrap">
 				<div class="header-top d-flex justify-content-between align-items-center navbar-expand-md">
 					<div class="col menu-left">
-						<a class="active" href="AdminHomePage.html">Home</a>
+						<a class="active" href="AdminHomePage.php">Home</a>
 
 						<a  href="menu.html" >menu</a>
 						<a href="about2.html">about</a>
@@ -48,7 +57,7 @@
 					</div>
 
 					<div class="col-3 logo">
-						<a href="AdminHomePage.html"><img class="mx-auto" src="img/logo.png" alt="" width="270" height="100"></a>
+						<a href="AdminHomePage.php"><img class="mx-auto" src="img/logo.png" alt="" width="270" height="100"></a>
 					</div>
 					<nav class="col navbar navbar-expand-md justify-content-end">
 
@@ -61,7 +70,7 @@
 						<div class="collapse navbar-collapse menu-right" id="collapsibleNavbar">
 							<ul class="navbar-nav justify-content-center w-100">
 								<li class="nav-item hide-lg">
-									<a class="nav-link" href="AdminHomePage.html">Home</a>
+									<a class="nav-link" href="AdminHomePage.php">Home</a>
 								</li>
 								
 
@@ -96,7 +105,7 @@
 															<li>       	<a class="dropdown-item" href="Order.html">Online Ordering</a>                </li>
 															
 															<li>       		<a class="dropdown-item" href="booking.html">Booking</a>          </li>
-															<li>       		<a class="dropdown-item" href="addDish.html">Add Dish</a>          </li>
+															<li>       		<a class="dropdown-item" href="AddDishForm.php">Add Dish</a>          </li>
 														</ul>
 										
 									

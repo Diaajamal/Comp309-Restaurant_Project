@@ -30,6 +30,8 @@ class UserDao
             $user->setPassword($result->fetch_assoc()['password']);
             $result->data_seek($j);
             $user->setPhoneNumber($result->fetch_assoc()['phone_number']);
+            $result->data_seek($j);
+            $user->setType($result->fetch_assoc()['TYPE']);
             $arr_user[] = $user;
         }
 
@@ -48,7 +50,7 @@ class UserDao
         $u_p = $user->getPassword();
         $u_pn = $user->getPhoneNumber();
 
-        $query = "INSERT INTO users (first_name, last_name, email, password, phone_number) VALUES ('$u_f', '$u_l', '$u_e', '$u_p', '$u_pn')";
+        $query = "INSERT INTO users (first_name, last_name, email, password, phone_number,type ) VALUES ('$u_f', '$u_l', '$u_e', '$u_p', '$u_pn',0)";
         $result = $connection->query($query);
 
         if (!$result) die($connection->error);

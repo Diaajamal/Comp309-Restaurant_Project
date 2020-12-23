@@ -8,7 +8,75 @@ class LineItem
     private $dishId;
     private $price;
     private $quantity;
+    private $email;
+    private $dishName;
+    private $status;
+    private $orderId;
 
+
+    /**
+     * @return mixed
+     */
+    public function getOrderId()
+    {
+        return $this->orderId;
+    }
+
+    /**
+     * @param mixed $orderId
+     */
+    public function setOrderId($orderId): void
+    {
+        $this->orderId = $orderId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status): void
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDishName()
+    {
+        return $this->dishName;
+    }
+
+    /**
+     * @param mixed $dishName
+     */
+    public function setDishName($dishName): void
+    {
+        $this->dishName = $dishName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
     /**
      * @return mixed
      */

@@ -6,7 +6,19 @@ class LineItemService
         $lineItemDao = new LineItemDao();
         $lineItemDao->create($lineItem);
     }
+    public function getByEmail($email){
+        $lineItemDao = new LineItemDao();
+        return $lineItemDao->getByEmail($email);
 
+
+    }
+
+    public function confirmOrder($email){
+        $lineItemDao = new LineItemDao();
+        return $lineItemDao->confirmOrder($email);
+
+
+    }
 
 
 }

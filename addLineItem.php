@@ -2,7 +2,10 @@
 
 include 'backend/controllers/DishController.php';
 
+if(is_null(array_values($_COOKIE)[0])){
+header("Location: regform.html");
 
+}
 $dishController = new DishController();
 
 $result1=$dishController->getAll();
@@ -113,7 +116,7 @@ $result1=$dishController->getAll();
 					</span>
 
 
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <div class="wrap-input100 validate-input" >
                     <span class="label-input100">dish</span>
                     <select class="input100" type="text" name="dish" id="dish" placeholder="dish">
                         <?php while($row1=mysqli_fetch_array($result1)):;?>
@@ -125,7 +128,7 @@ $result1=$dishController->getAll();
                     <span class="focus-input100"></span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                <div class="wrap-input100 validate-input" >
                     <span class="label-input100">dish</span>
                     <input class="input100" type="number" name="quantity" id="quantity" placeholder="quantity">
                     <span class="focus-input100"></span>
@@ -139,11 +142,28 @@ $result1=$dishController->getAll();
                             Add LineItem
                         </button>
                     </div>
+
+
                 </div>
             </form>
+            <form  action="DisplayMyPendingLineItems.php" >
+					<span class="login100-form-title p-b-59">
+					</span>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn" name="register" action ="DisplayMyLineItems.php">
+                            Display LineItems
+                        </button>
+                    </div>
+                </div>
+            </form>
+
         </div>
+
     </div>
 </div>
+
 
 
 <div id="message">
@@ -153,6 +173,8 @@ $result1=$dishController->getAll();
     <p id="number" class="invalid">A <b>number</b></p>
     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
 </div>
+
+
 
 <script>
     var myInput = document.getElementById("pass");
@@ -218,6 +240,8 @@ $result1=$dishController->getAll();
             length.classList.add("invalid");
         }
     }
+
+
 </script>
 
 <!--===============================================================================================-->

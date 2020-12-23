@@ -14,6 +14,4 @@ require_once 'backend/models/Dish.php';
     $dishAdd-> setId(uniqid());
 
     $dishController->create($dishAdd);
-    echo "Account have been created !";
-
-?>
+    header("Location:AddDishForm.php");
