@@ -3,10 +3,7 @@ require_once 'backend/controllers/UserController.php';
 require_once 'backend/models/User.php';
 // controller and model.
 session_start();
-if(isset($_COOKIE['cookie_name']))
-{
-    header('Location: AdminHomePage.html');
-}
+
 $eml=$_POST['eml'];
 $psw=$_POST['pass'];
 function checkUser($list, $eml, $psw){
@@ -22,17 +19,23 @@ function checkUser($list, $eml, $psw){
 
 
             if($user->getType()==0){
-            header('Location: HomePage.html');
+            header('Location:HomePage.php');
             break;}
-            if($user->getType()==1){
-                header('Location: AdminHomePage.php');
-                break;
 
+            if($user->getType()==1){
+                header('Location:AdminHomePage.php');
+                break;
+            } else{
+                header('Location: UnauthorizedCombination.html');
             }
+
         }
-        else                 header('Location: UnauthorizedCombination.html');
-        ;
     }
+}
+
+if(isset($_COOKIE['cookie_name']))
+{
+    header('Location: UnauthorizedCombination.html');
 }
 $user_controller = new UserController();
 checkUser($user_controller->getAll(), $eml ,$psw);
