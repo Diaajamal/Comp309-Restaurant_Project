@@ -22,4 +22,13 @@ class LineItemController
 
     }
 
+    public function getById($orderId){
+        $lineItemService = new LineItemService();
+        return $lineItemService->getOrderId($orderId);
+
+
+    }
+
+
+
 }

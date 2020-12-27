@@ -6,20 +6,19 @@ class LineItemDao
     public function create($lineItem)
     {
         include 'server.php';
-
+        $itemId=uniqid();
         $item_quantity=$lineItem->getQuantity();
         $item_price = $lineItem->getPrice();
         $dish_id=$lineItem->getDishId();
         $email=$lineItem->getEmail();
         $dish_name=$lineItem->getDishName();
         $status='PENDING';
-        $query = "INSERT INTO lineItem (id,quantity, price,dish_id,Email,dish_name,Status) VALUES ('uniqid()', 
-                                                          ' $item_quantity', '$item_price','$dish_id','$email','$dish_name',
-                                                                                 '$status')";
+        $query = "INSERT INTO lineitem (id,quantity, price,dish_id,Email,dish_name,Status) VALUES ('$itemId', 
+ ' $item_quantity', '$item_price','$dish_id','$email','$dish_name',  '$status') ";
         $result = $connection->query($query);
 
         if (!$result) die($connection->error);
-
+        $itemId=0;
         $connection->close();
     }
 
@@ -61,4 +60,26 @@ class LineItemDao
 
 
     }
+    public function findByOrderId($orderId)
+    {
+        include 'server.php';
+
+        $query="select id,quantity,Email,dish_name from lineitem where order_id='$orderId' and Status='CONFIRMED'";
+        $result = mysqli_query($connection,$query);
+        return  $result;
+
+    }
+
+    function random_string($length) {
+        $key = '';
+        $keys = array_merge(range(0, 9), range('a', 'z'));
+
+        for ($i = 0; $i < $length; $i++) {
+            $key .= $keys[array_rand($keys)];
+        }
+
+        return $key;
+    }
+
+
 }
