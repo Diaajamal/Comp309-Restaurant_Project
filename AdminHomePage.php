@@ -52,7 +52,7 @@ if(is_null(array_values($_COOKIE)[0])){
 						<a class="active" href="AdminHomePage.php">Home</a>
 
 						<a  href="ConfirmedOrder.php" >Confirmed order</a>
-						<a href="about2.html">about</a>
+                        <a href="menu.html">Menu</a>
 
 					</div>
 
@@ -76,9 +76,7 @@ if(is_null(array_values($_COOKIE)[0])){
 
 
 							
-								<li class="nav-item hide-lg">
-									<a class="nav-link" href="about.php">about</a>
-								</li>
+
 								<!-- Dropdown -->
 
 <!-- 
@@ -88,7 +86,7 @@ if(is_null(array_values($_COOKIE)[0])){
 									</a> -->
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-											Book & Order
+											Add
 										</a>
 										<div class="dropdown-menu">
 												<style>
@@ -102,9 +100,7 @@ if(is_null(array_values($_COOKIE)[0])){
 														
 														
 														<ul class="a">
-															<li>       	<a class="dropdown-item" href="Order.html">Online Ordering</a>                </li>
-															
-															<li>       		<a class="dropdown-item" href="booking.html">Booking</a>          </li>
+
 															<li>       		<a class="dropdown-item" href="AddDishForm.php">Add Dish</a>          </li>
 														</ul>
 										
@@ -112,9 +108,6 @@ if(is_null(array_values($_COOKIE)[0])){
 										</div>
 									</li>
 									
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="gallery.html">Gallery</a>
 								</li>
 								
 								<li class="nav-item">
