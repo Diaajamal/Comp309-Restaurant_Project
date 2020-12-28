@@ -1,6 +1,6 @@
 <?php
 
-require_once "backend/models/Order.php";
+//require_once "backend/models/Order.php";
 
 
 class OrderDao
@@ -65,5 +65,18 @@ class OrderDao
         if (!$result) die($connection->error);
 
         $connection->close();
+    }
+
+    public function adminGetConfirmed()
+    {
+        include 'server.php';
+        $confirmed="CONFIRMED";
+        $query = "select * from myorder where Status='$confirmed'";
+
+
+        $result = mysqli_query($connection,$query);
+
+
+        return $result;
     }
 }

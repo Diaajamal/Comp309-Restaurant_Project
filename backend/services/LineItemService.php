@@ -19,6 +19,12 @@ class LineItemService
 
 
     }
+    public function getOrderId($orderId){
+        $lineItemDao = new LineItemDao();
+        return $lineItemDao->findByOrderId($orderId);
+
+
+    }
 
 
 }

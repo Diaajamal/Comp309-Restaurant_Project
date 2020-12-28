@@ -51,7 +51,7 @@ if(is_null(array_values($_COOKIE)[0])){
 					<div class="col menu-left">
 						<a class="active" href="AdminHomePage.php">Home</a>
 
-						<a  href="menu.html" >menu</a>
+						<a  href="ConfirmedOrder.php" >Confirmed order</a>
 						<a href="about2.html">about</a>
 
 					</div>
