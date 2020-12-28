@@ -44,7 +44,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone_number`, `TYPE`) VALUES
 (18, 'diaa', 'jamal', 'admin@admin.com', 'admin', '01147817213', 1),
 (19, 'diaa', 'jamal', 'user@user.com', 'user', '01147817213', 0),
-(20, 'kakreem', 'ahmed', 'karafat1998@gmail.com', 'New123456', '01002222392', 0),
+(20, 'kakreem', 'ahmed', 'karafat1998@gmail.com', 'New123456', '01002222392', 0)
 
 --
 -- Indexes for dumped tables
