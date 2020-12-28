@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `restaurantpro`
+-- Database: `rms`
 --
 
 -- --------------------------------------------------------
@@ -33,15 +33,17 @@ CREATE TABLE `users` (
   `last_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `phone_number` varchar(11) NOT NULL
+  `phone_number` varchar(11) NOT NULL,
+  `TYPE` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone_number`) VALUES
-(1, 'diaa', 'jamal', 'admin@admin.com', 'admin', '01147817213');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone_number`, `TYPE`) VALUES
+(19, 'diaa', 'jamal', 'admin@admin.com', 'admin', '01147817213', 1),
+(18, 'kakreem', 'ahmed', 'karafat1998@gmail.com', 'New123456', '01002222392', 0),
 
 --
 -- Indexes for dumped tables
@@ -61,8 +63,9 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
