@@ -104,8 +104,6 @@ if(is_null(array_values($_COOKIE)[0])){
 														
 														
 														<ul class="a">
-															<li>       	<a class="dropdown-item" href="Order.html">Online Ordering</a>                </li>
-															
 															<li>       		<a class="dropdown-item" href="booking.html">Booking</a>          </li>
 																<li>       	<a class="dropdown-item" href="AddLineItem.php">Make Order</a>          </li>
 
